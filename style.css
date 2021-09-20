@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@1,100&display=swap");
+
+:root {
+  --primary-blue: hsl(223, 87%, 63%);
+  --secondary-pale-blue: hsl(223, 100%, 88%);
+  --secondary-light-red: hsl(354, 100%, 66%);
+  --neutral-gray: hsl(0, 0%, 59%);
+  --neutral-dark-blue: hsl(209, 33%, 12%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header {
+  margin-block: 2rem;
+}
+
+main {
+  width: min(100%, 1200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: var(--neutral-gray);
+  font-size: min(6vw, 35px);
+}
+.bold {
+  font-weight: 700;
+  color: var(--neutral-dark-blue);
+}
+
+.subtitle {
+  font-size: min(3vw, 15px);
+  color: var(--neutral-dark-blue);
+  margin-block: min(3vw, 1em);
+}
+
+form {
+  margin-block: min(4vw, 2rem) min(4vw, 3rem);
+  margin-inline: auto;
+  width: min(70%, 600px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+input {
+  width: 100%;
+  padding: min(3vw, 1rem);
+  border-radius: 3rem;
+  outline: none;
+  border: none;
+}
+
+.form-controls {
+  position: relative;
+}
+
+.form-controls input {
+  border: 1px solid var(--neutral-gray);
+  padding-inline: 2rem;
+}
+.form-controls small {
+  display: none;
+}
+
+.form-controls.success input {
+  border-color: lightgreen;
+  color: lightgreen;
+}
+.form-controls.error input {
+  border-color: var(--secondary-light-red);
+  color: var(--secondary-light-red);
+}
+.form-controls.error small {
+  display: block;
+  color: var(--secondary-light-red);
+  font-style: italic;
+  font-size: min(3vw, 12px);
+  font-weight: 100;
+}
+.btn {
+  background-color: var(--primary-blue);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: -5px 10px 15px hsla(223, 100%, 88%, 0.3),
+    5px 10px 15px hsla(223, 100%, 88%, 0.3);
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+@media (min-width: 800px) {
+  form {
+    flex-direction: row;
+    gap: 1;
+  }
+  .btn {
+    max-width: 20%;
+  }
+  .form-controls input {
+    width: min(40vw, 360px);
+  }
+  .form-controls.error small {
+    text-align: left;
+    margin-left: 1rem;
+    position: absolute;
+  }
+}
+
+section#dashboard {
+  background-image: url("images/illustration-dashboard-mobile.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 40vh;
+}
+@media (min-width: 800px) {
+  section#dashboard {
+    background-image: url("images/illustration-dashboard.png");
+  }
+}
+.social-container {
+  margin-block: 2rem;
+}
+
+.social-container i {
+  font-size: 1rem;
+  color: var(--primary-blue);
+  padding: 0.5rem;
+  border: 1px solid var(--primary-blue);
+  border-radius: 50%;
+  margin-inline: 0.25rem;
+}
+
+.social-container i:hover {
+  background-color: var(--primary-blue);
+  color: #fff;
+}
+
+.disclaimer {
+  color: var(--neutral-gray);
+  font-size: 0.75rem;
+}
+
+/* MODAL */
+.overlay {
+  display: none;
+}
+.overlay.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(20px);
+}
+
+.popup {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  margin-inline: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.popup::before {
+  content: "\f560";
+  font-weight: bold;
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  right: 5px;
+  bottom: -25px;
+  font-size: 9rem;
+  opacity: 0.3;
+  color: lightgreen;
+}
+.btn-close {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.popup-header {
+  margin-block: 1rem;
+}
+.popup-header span {
+  color: lightgreen;
+}
+.popup-content {
+  font-size: 0.8em;
+  width: min(100%, 200px);
+  color: var(--neutral-dark-blue);
+}

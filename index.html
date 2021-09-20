@@ -11,7 +11,13 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Frontend Mentor | Ping coming soon page</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
@@ -27,15 +33,52 @@
     </style>
   </head>
   <body>
-    We are launching soon! Subscribe and get notified Notify Me &copy; Copyright
-    Ping. All rights reserved.
+    <header><img src="images/logo.svg" alt="Our magnificient logo" /></header>
+    <main>
+      <section>
+        <h1>We are launching <span class="bold">soon!</span></h1>
+        <p class="subtitle">Subscribe and get notified</p>
+        <form id="form">
+          <div class="form-controls">
+            <input
+              id="email"
+              type="email"
+              placeholder="Your email address..."
+            />
+            <small>Please provide a valid email address</small>
+          </div>
+          <input type="submit" class="btn" value="Notify Me" />
+        </form>
+      </section>
+      <section id="dashboard"></section>
+      <section>
+        <div class="social-container">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="disclaimer">&copy; Copyright Ping. All rights reserved.</p>
+      </section>
+    </main>
 
+    <div class="overlay">
+      <div class="popup">
+        <div class="popup-header">See you <span class="bold">soon!</span></div>
+        <div class="popup-content">You message has been successfully sent!</div>
+        <button id="close" class="btn-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
     <footer>
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/ghostwriter7"
+          >ghostwriter7</a
+        >.
       </p>
     </footer>
   </body>
